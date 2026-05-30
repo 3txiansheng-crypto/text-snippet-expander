@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { 
+    width: 320px; 
+    font-family: -apple-system, sans-serif;
+    background: #1a1a2e; 
+    color: #e0e0e0;
+    padding: 16px;
+  }
+  h1 { 
+    font-size: 14px; 
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+  .add-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .add-row input {
+    flex: 1;
+    padding: 6px 8px;
+    background: #16213e;
+    border: 1px solid #2a2a4a;
+    color: #e0e0e0;
+    border-radius: 4px;
+    font-size: 12px;
+    outline: none;
+  }
+  .add-row input:focus { border-color: #4a9eff; }
+  .add-row input::placeholder { color: #666; }
+  .key-input { max-width: 80px; }
+  button {
+    padding: 6px 12px;
+    background: #4a9eff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  button:hover { background: #3a8eef; }
+  .snippet-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 8px 0;
+    border-bottom: 1px solid #2a2a4a;
+  }
+  .snippet-key {
+    font-weight: 600;
+    color: #4a9eff;
+    min-width: 60px;
+    font-size: 12px;
+    padding-top: 1px;
+  }
+  .snippet-text {
+    flex: 1;
+    font-size: 11px;
+    color: #aaa;
+    word-break: break-all;
+    line-height: 1.4;
+  }
+  .del-btn {
+    background: none;
+    color: #e05555;
+    padding: 0 4px;
+    font-size: 16px;
+    line-height: 1;
+  }
+  .del-btn:hover { color: #ff6b6b; background: none; }
+  .empty { 
+    text-align: center; 
+    color: #666; 
+    font-size: 12px;
+    padding: 20px 0;
+  }
+  .tip {
+    font-size: 11px;
+    color: #555;
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+<h1>⚡ Snippet</h1>
+<div class="add-row">
+  <input class="key-input" id="keyInput" placeholder="关键词" maxlength="20">
+  <input id="textInput" placeholder="替换文本" maxlength="500">
+  <button id="addBtn">添加</button>
+</div>
+<div id="snippetList"></div>
+<div class="tip">
+  在任意输入框输入 <b style="color:#4a9eff">/关键词</b> 然后按空格/回车
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>
